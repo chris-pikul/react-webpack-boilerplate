@@ -45,3 +45,4 @@ exports['assets:build'] =  productionAssets;
 exports['package'] = series(clean, productionWebpack, productionAssets, cleanMaps);
 exports['package:assets'] = series(clean, productionAssets);
 exports['develop'] = series(clean, developWebpack);
+exports.default = series(clean, developWebpack);
