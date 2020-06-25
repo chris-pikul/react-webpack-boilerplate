@@ -49,7 +49,17 @@ yarn serve:production
 And then open your browser to `http://localhost:8080`.
 
 # developing
-The structure and some starting code is provided. Here are some explanations on what's going on:
+The structure and some starting code is provided. 
+
+Some important things to note and consider when using this:
+- The `package.json` file is used to supply a bunch of string values, the most important to change is the `name` and `version` properties as you develop. These directly decide the file name for the bundles generated.
+- In addition, a custom property is added to the `package.json` file called `details`. This supplies some strings and values which are used in the HTML generation. They include:
+    + `title`: Used for the HTML `<title>` tag, giving the page it's name.
+    + `charset`: Declares the `<meta charset />` tag, which is commonly used in pages. Suggested that you don't change this.
+    + `meta`: This object is expanded to create more `<meta name content />` tags which are common in HTML files.
+    + `opengraph`: This object is also expanded to create `<meta property content />` tags used by OpenGraph. OpenGraph tags are read by other websites and robots to help configure how links to your app are displayed.
+
+Here are some explanations on what's going on:
 
 ## HTML Generation
 This project uses Nunjucks to provide templating for HTML file generate. You can see this in the `html/` folder for the `index.njk` file.

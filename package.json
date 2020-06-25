@@ -55,7 +55,8 @@
     "charset": "utf-8",
     "meta": {
       "author": "Chris Pikul",
-      "description": "A simple React boilerplate, using Webpack, BabelJS, and SASS/PostCSS"
+      "description": "A simple React boilerplate, using Webpack, BabelJS, and SASS/PostCSS",
+      "viewport": "width=device-width, initial-scale=1"
     },
     "opengraph": {
       "og:title": "React Webpack Boilerplate",
