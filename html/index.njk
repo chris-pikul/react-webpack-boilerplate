@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="{{ Package.details.charset }}" />
+    {% for name, value in Package.details.meta %}
+    <meta name="{{ name }}" content="{{ value }}" />
+    {% endfor %}
+    {% for prop, value in Package.details.opengraph %}
+    <meta property="{{ prop }}" content="{{ value }}" />
+    {% endfor %}
+    <title>{{ Package.details.title }}</title>
+    {% if Dev %}
+    <link rel='stylesheet' href='/{{ Package.name }}.css' />
+    {% else %}
+    <link rel='stylesheet' href='/{{ Package.name }}-v{{ Package.version }}.css' />
+    {% endif %}
+</head>
+<body>
+    <div id='root'></div>
+    {% if Dev %}
+    <script type='application/javascript' src='/node_modules/react/umd/react.development.js'></script>
+    <script type='application/javascript' src='/node_modules/react-dom/umd/react-dom.development.js'></script>
+    <script type='application/javascript' src='/{{ Package.name }}.js' ></script>
+    {% else %}
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script type='application/javascript' src='/{{ Package.name }}-v{{ Package.version }}.js' ></script>
+    {% endif %}
+</body>

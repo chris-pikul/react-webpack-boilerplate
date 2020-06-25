@@ -1,0 +1,5 @@
+# Browsers that are supported.
+# Code/Styles will be transformed using these rules by Babel/PostCSS/etc.
+
+last 3 versions
+ie 11

@@ -1,3 +1,7 @@
+# Buld & Dist folders
+build
+dist
+
 # Logs
 logs
 *.log
